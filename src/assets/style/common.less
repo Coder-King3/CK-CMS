@@ -1,0 +1,40 @@
+/* common.css公用样式文件 */
+// 折叠侧边栏HoverItem样式
+.el-popper {
+  .el-menu--popup {
+    padding: 0px;
+    border-radius: 3px;
+    background-color: var(--theme-aside-bg);
+    overflow: hidden;
+    .el-menu-item {
+      margin: 4px;
+      border-radius: 5px;
+      color: var(--theme-aside-menu-txt) !important;
+      background-color: var(--theme-aside-menu-bg) !important;
+    }
+    .el-menu-item:hover {
+      color: var(--theme-aside-menu-txt-hover) !important; // 菜单
+      background-color: var(--theme-aside-menu-bg-hover) !important;
+    }
+  }
+}
+
+// 页面卡片
+.page-card {
+  .el-card__body {
+    padding: 15px;
+  }
+}
+
+// 滚动条优化
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c0c4cc;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}

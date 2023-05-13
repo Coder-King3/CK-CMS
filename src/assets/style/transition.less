@@ -1,0 +1,25 @@
+/* fade-animate */
+// enter
+.fade-animate-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-animate-enter-active {
+  transition: all 0.25s;
+}
+.fade-animate-enter-to {
+  opacity: 1;
+  transform: translateX(0px);
+}
+// leave
+.fade-animate-leave-from {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.fade-animate-leave-active {
+  transition: all 0.25s;
+}
+.fade-animate-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
