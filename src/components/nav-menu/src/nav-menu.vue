@@ -4,7 +4,7 @@
     <div class="logo">
       <a href="/">
         <svg-icon type="logo" class="icon" />
-        <span v-show="!props.isFold" class="title">CMS-CK</span>
+        <span v-show="!props.isFold" class="title">CK-CMS</span>
       </a>
     </div>
 

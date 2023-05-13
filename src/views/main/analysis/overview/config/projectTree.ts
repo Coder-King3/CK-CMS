@@ -1,358 +1,290 @@
 const tree = `
-vue3_ts_cms
-│  .browserslistrc
-│  .editorconfig
-│  .env.development
-│  .env.production
-│  .env.test
-│  .eslintrc.js
-│  .gitignore
-│  .prettierignore
-│  .prettierrc
-│  babel.config.js
-│  commitlint.config.js
-│  package-lock.json
-│  package.json
-│  README.md
-│  tsconfig.json
-│  vue.config.js
-│
-├─.husky
-│  │  commit-msg
-│  │  pre-commit
-│  │
-│  └─_
-│          .gitignore
-│          husky.sh
-│
-├─public
-│      favicon.ico
-│      index.html
-│
-└─src
-    │  App.vue
-    │  main.ts
-    │  shims-vue.d.ts
-    │
-    ├─assets
-    │  ├─css
-    │  │      base.less
-    │  │      index.less
-    │  │      wangEditor.less
-    │  │
-    │  └─images
-    │          background_img.jpg
-    │          logo.png
-    │
-    ├─common-ui
-    │  ├─breadcrumb
-    │  │  │  index.ts
-    │  │  │
-    │  │  ├─src
-    │  │  │      BreadCrumb.vue
-    │  │  │
-    │  │  └─types
-    │  │          types.ts
-    │  │
-    │  ├─msi-card
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          MsiCard.vue
-    │  │
-    │  ├─msi-descriptions
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          MsiDescriptions.vue
-    │  │
-    │  ├─msi-echarts
-    │  │  │  index.ts
-    │  │  │
-    │  │  ├─hooks
-    │  │  │      initECharts.ts
-    │  │  │      mapCityToMap.ts
-    │  │  │
-    │  │  ├─map
-    │  │  │      china.json
-    │  │  │      city.ts
-    │  │  │
-    │  │  └─src
-    │  │          MsiEcharts.vue
-    │  │
-    │  ├─msi-editor
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          MsiEditor.vue
-    │  │
-    │  ├─msi-form
-    │  │  │  index.ts
-    │  │  │
-    │  │  ├─src
-    │  │  │      MsiForm.vue
-    │  │  │
-    │  │  └─types
-    │  │          types.ts
-    │  │
-    │  ├─msi-tabel
-    │  │  │  index.ts
-    │  │  │
-    │  │  ├─src
-    │  │  │      MsiTabel.vue
-    │  │  │
-    │  │  └─types
-    │  │          types.ts
-    │  │
-    │  └─msi-upload
-    │      │  index.ts
-    │      │
-    │      └─src
-    │              MsiUpload.vue
-    │
-    ├─components
-    │  ├─nav-header
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          NavHeader.vue
-    │  │
-    │  ├─nav-menu
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          NavMenu.vue
-    │  │
-    │  ├─page-dialog
-    │  │  │  index.ts
-    │  │  │
-    │  │  ├─src
-    │  │  │      PageDialog.vue
-    │  │  │
-    │  │  └─types
-    │  │          types.ts
-    │  │
-    │  ├─page-echart
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          PageBarChart.vue
-    │  │          PageChinaChart.vue
-    │  │          PageLineChart.vue
-    │  │          PagePicChart.vue
-    │  │          PagePicLableChart.vue
-    │  │          PageRoseChart.vue
-    │  │
-    │  ├─page-search
-    │  │  │  index.ts
-    │  │  │
-    │  │  └─src
-    │  │          PageSearch.vue
-    │  │
-    │  └─page-tabel
-    │      │  index.ts
-    │      │
-    │      └─src
-    │              PageTabel.vue
-    │
-    ├─global
-    │      index.ts
-    │      registerElement.ts
-    │      registerGlobal.ts
-    │
-    ├─hooks
-    │      countAction.ts
-    │      pageLinkage.ts
-    │      permission.ts
-    │
-    ├─router
-    │  │  index.ts
-    │  │
-    │  └─main
-    │      ├─analysis
-    │      │  ├─dashboard
-    │      │  │      dashboard.ts
-    │      │  │
-    │      │  └─overview
-    │      │          overview.ts
-    │      │
-    │      ├─product
-    │      │  ├─category
-    │      │  │      category.ts
-    │      │  │
-    │      │  └─goods
-    │      │          goods.ts
-    │      │
-    │      ├─story
-    │      │  ├─chat
-    │      │  │      chat.ts
-    │      │  │
-    │      │  └─list
-    │      │          list.ts
-    │      │
-    │      └─system
-    │          ├─department
-    │          │      department.ts
-    │          │
-    │          ├─menu
-    │          │      menu.ts
-    │          │
-    │          ├─role
-    │          │      role.ts
-    │          │
-    │          └─user
-    │                  user.ts
-    │
-    ├─service
-    │  │  index.ts
-    │  │  types.ts
-    │  │
-    │  ├─login
-    │  │      index.ts
-    │  │      types.ts
-    │  │
-    │  ├─main
-    │  │  ├─analysis
-    │  │  │      index.ts
-    │  │  │
-    │  │  ├─story
-    │  │  │      index.ts
-    │  │  │
-    │  │  └─system
-    │  │          index.ts
-    │  │
-    │  └─request
-    │          index.ts
-    │          type.ts
-    │
-    ├─store
-    │  │  index.ts
-    │  │  types.ts
-    │  │
-    │  ├─analysis
-    │  │      index.ts
-    │  │      types.ts
-    │  │
-    │  ├─login
-    │  │      index.ts
-    │  │      types.ts
-    │  │
-    │  ├─product
-    │  │      index.ts
-    │  │      types.ts
-    │  │
-    │  └─system
-    │          index.ts
-    │          types.ts
-    │
-    ├─utils
-    │      cache.ts
-    │      formate.ts
-    │      handleString.ts
-    │      menuToRoute.ts
-    │
-    └─views
-        ├─login
-        │  │  Login.vue
-        │  │
-        │  ├─cpns
-        │  │      LoginPhone.vue
-        │  │      LoginUser.vue
-        │  │
-        │  └─hooks
-        │          rules.ts
-        │
-        ├─main
-        │  │  Main.vue
-        │  │
-        │  ├─analysis
-        │  │  ├─dashboard
-        │  │  │  │  dashboard.vue
-        │  │  │  │
-        │  │  │  ├─config
-        │  │  │  │      showCountConfig.ts
-        │  │  │  │
-        │  │  │  ├─cpn
-        │  │  │  │      ShowCharts.vue
-        │  │  │  │      ShowCount.vue
-        │  │  │  │
-        │  │  │  └─hook
-        │  │  └─overview
-        │  │      │  overview copy.vue
-        │  │      │  overview.vue
-        │  │      │
-        │  │      └─config
-        │  │              dependencies.ts
-        │  │              devDependencies.ts
-        │  │              projectStandard.ts
-        │  │              projectTree.ts
-        │  │              technologyStacks.ts
-        │  │
-        │  ├─product
-        │  │  ├─category
-        │  │  │  │  category.vue
-        │  │  │  │
-        │  │  │  ├─config
-        │  │  │  │      dialog.config.ts
-        │  │  │  │      form.config.ts
-        │  │  │  │      tabel.config.ts
-        │  │  │  │
-        │  │  │  └─cpn
-        │  │  │          CategoryHeader.vue
-        │  │  │
-        │  │  └─goods
-        │  │      │  goods.vue
-        │  │      │
-        │  │      └─configs
-        │  │              dialog.config.ts
-        │  │              tabel.config.ts
-        │  │
-        │  ├─story
-        │  │  ├─chat
-        │  │  │      chat.vue
-        │  │  │
-        │  │  └─list
-        │  │      │  list.vue
-        │  │      │
-        │  │      └─config
-        │  │              tabel.config.ts
-        │  │
-        │  └─system
-        │      ├─department
-        │      │  │  department.vue
-        │      │  │
-        │      │  └─config
-        │      │          dialog.config.ts
-        │      │          from.config.ts
-        │      │          tabel.config.ts
-        │      │
-        │      ├─menu
-        │      │  │  menu.vue
-        │      │  │
-        │      │  └─configs
-        │      │          dialog.config.ts
-        │      │          tabel.config.ts
-        │      │
-        │      ├─role
-        │      │  │  role.vue
-        │      │  │
-        │      │  └─config
-        │      │          dialog.config.ts
-        │      │          form.config.ts
-        │      │          tabel.config.ts
-        │      │
-        │      └─user
-        │          │  user.vue
-        │          │
-        │          └─configs
-        │                  dialog.config.ts
-        │                  form.config.ts
-        │                  tabel.config.ts
-        │
-        └─not-found
-            │  NotFound.vue
-            │
-            └─src
+CK-CMS
+├── README.md
+├── auto-imports.d.ts
+├── commitlint.config.js
+├── components.d.ts
+├── env.d.ts
+├── index.html
+├── package
+├── package-lock.json
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── favicon.ico
+│   └── favicon.png
+├── src
+│   ├── App.vue
+│   ├── assets
+│   │   ├── img
+│   │   │   ├── login-bg.svg
+│   │   │   └── logo.png
+│   │   ├── style
+│   │   │   ├── common.less
+│   │   │   ├── index.less
+│   │   │   ├── reset.less
+│   │   │   ├── theme.less
+│   │   │   └── transition.less
+│   │   └── svg
+│   │       ├── exit.svg
+│   │       ├── loading.svg
+│   │       ├── logo.svg
+│   │       └── palette.svg
+│   ├── base-ui
+│   │   ├── king-breadcurmb
+│   │   │   ├── index.ts
+│   │   │   ├── src
+│   │   │   │   └── king-breadcurmb.vue
+│   │   │   └── types
+│   │   │       └── types.ts
+│   │   ├── king-card
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── king-card.vue
+│   │   ├── king-descriptions
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── king-descriptions.vue
+│   │   ├── king-echarts
+│   │   │   ├── hook
+│   │   │   │   └── useInitEcharts.ts
+│   │   │   ├── index.ts
+│   │   │   ├── map
+│   │   │   │   ├── china.json
+│   │   │   │   └── coordinate-data.ts
+│   │   │   ├── src
+│   │   │   │   └── king-echarts.vue
+│   │   │   ├── types
+│   │   │   │   └── types.ts
+│   │   │   └── utils
+│   │   │       └── convert-data.ts
+│   │   ├── king-editor
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── king-editor.vue
+│   │   ├── king-icon
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── king-icon.vue
+│   │   ├── not-found
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       ├── not-found.vue
+│   │   │       └── style
+│   │   │           └── 404.less
+│   │   └── svg-icon
+│   │       ├── index.ts
+│   │       └── src
+│   │           └── svg-icon.vue
+│   ├── components
+│   │   ├── count-card
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── count-card.vue
+│   │   ├── nav-header
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       ├── cpns
+│   │   │       │   └── header-info.vue
+│   │   │       └── nav-header.vue
+│   │   ├── nav-menu
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       ├── cpns
+│   │   │       │   └── sub-menu.vue
+│   │   │       └── nav-menu.vue
+│   │   ├── page-content
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── page-content.vue
+│   │   ├── page-echarts
+│   │   │   ├── index.ts
+│   │   │   ├── src
+│   │   │   │   ├── bar-echart.vue
+│   │   │   │   ├── line-echart.vue
+│   │   │   │   ├── map-echart.vue
+│   │   │   │   ├── pie-echart.vue
+│   │   │   │   └── rose-echart.vue
+│   │   │   └── types
+│   │   │       └── index.ts
+│   │   ├── page-modal
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       └── page-modal.vue
+│   │   └── page-search
+│   │       ├── index.ts
+│   │       └── src
+│   │           └── page-search.vue
+│   ├── global
+│   │   ├── constants.ts
+│   │   ├── index.ts
+│   │   └── register-baseui.ts
+│   ├── hooks
+│   │   ├── usePageContent.ts
+│   │   ├── usePageModal.ts
+│   │   ├── usePageSearch.ts
+│   │   └── usePermissions.ts
+│   ├── main.ts
+│   ├── router
+│   │   ├── index.ts
+│   │   ├── local
+│   │   │   └── localRoutes.ts
+│   │   └── main
+│   │       ├── analysis
+│   │       │   ├── dashboard
+│   │       │   │   └── dashboard.ts
+│   │       │   └── overview
+│   │       │       └── overview.ts
+│   │       ├── product
+│   │       │   ├── category
+│   │       │   │   └── category.ts
+│   │       │   └── goods
+│   │       │       └── goods.ts
+│   │       ├── story
+│   │       │   ├── chat
+│   │       │   │   └── chat.ts
+│   │       │   └── list
+│   │       │       └── list.ts
+│   │       ├── system
+│   │       │   ├── department
+│   │       │   │   └── department.ts
+│   │       │   ├── menu
+│   │       │   │   └── menu.ts
+│   │       │   ├── role
+│   │       │   │   └── role.ts
+│   │       │   └── user
+│   │       │       └── user.ts
+│   │       └── test1
+│   │           └── test2
+│   │               └── test3
+│   │                   └── test3.ts
+│   ├── service
+│   │   ├── config
+│   │   │   └── config.ts
+│   │   ├── index.ts
+│   │   ├── login
+│   │   │   └── login.ts
+│   │   ├── main
+│   │   │   ├── analysis
+│   │   │   │   └── analysis.ts
+│   │   │   ├── main.ts
+│   │   │   └── system
+│   │   │       └── system.ts
+│   │   ├── request
+│   │   │   ├── index.ts
+│   │   │   └── type.ts
+│   │   └── types
+│   │       ├── index.ts
+│   │       ├── login.ts
+│   │       └── main.ts
+│   ├── store
+│   │   ├── index.ts
+│   │   ├── login
+│   │   │   └── login.ts
+│   │   └── main
+│   │       ├── analysis
+│   │       │   ├── analysis.ts
+│   │       │   └── type.ts
+│   │       ├── main.ts
+│   │       └── system
+│   │           ├── system.ts
+│   │           └── type.ts
+│   ├── types
+│   │   ├── components.ts
+│   │   ├── index.ts
+│   │   ├── login.ts
+│   │   └── service.ts
+│   ├── utils
+│   │   ├── cache.ts
+│   │   ├── crypto.ts
+│   │   ├── format.ts
+│   │   ├── index.ts
+│   │   └── map-menus.ts
+│   └── views
+│       ├── login
+│       │   ├── config
+│       │   │   └── account-config.ts
+│       │   ├── cpns
+│       │   │   ├── login-panel.vue
+│       │   │   ├── panel-account.vue
+│       │   │   └── panel-phone.vue
+│       │   └── login.vue
+│       ├── main
+│       │   ├── analysis
+│       │   │   ├── dashboard
+│       │   │   │   └── dashboard.vue
+│       │   │   └── overview
+│       │   │       ├── config
+│       │   │       │   ├── dependencies.ts
+│       │   │       │   ├── devDependencies.ts
+│       │   │       │   ├── projectStandard.ts
+│       │   │       │   ├── projectTree.ts
+│       │   │       │   └── technologyStacks.ts
+│       │   │       └── overview.vue
+│       │   ├── main.vue
+│       │   ├── product
+│       │   │   ├── category
+│       │   │   │   ├── category.vue
+│       │   │   │   └── config
+│       │   │   │       ├── content.config.ts
+│       │   │   │       ├── modal.config.ts
+│       │   │   │       └── search.config.ts
+│       │   │   └── goods
+│       │   │       ├── config
+│       │   │       │   ├── content.config.ts
+│       │   │       │   ├── modal.config.ts
+│       │   │       │   └── search.config.ts
+│       │   │       └── goods.vue
+│       │   ├── story
+│       │   │   ├── chat
+│       │   │   │   └── chat.vue
+│       │   │   └── list
+│       │   │       ├── config
+│       │   │       │   ├── content.config.ts
+│       │   │       │   ├── modal.config.ts
+│       │   │       │   └── search.config.ts
+│       │   │       └── list.vue
+│       │   ├── system
+│       │   │   ├── department
+│       │   │   │   ├── config
+│       │   │   │   │   ├── content.config.ts
+│       │   │   │   │   ├── modal.config.ts
+│       │   │   │   │   └── search.config.ts
+│       │   │   │   └── department.vue
+│       │   │   ├── menu
+│       │   │   │   ├── config
+│       │   │   │   │   ├── content.config.ts
+│       │   │   │   │   └── modal.config.ts
+│       │   │   │   └── menu.vue
+│       │   │   ├── role
+│       │   │   │   ├── config
+│       │   │   │   │   ├── content.config.ts
+│       │   │   │   │   ├── modal.config.ts
+│       │   │   │   │   └── search.config.ts
+│       │   │   │   └── role.vue
+│       │   │   └── user
+│       │   │       ├── config
+│       │   │       │   ├── content.config.ts
+│       │   │       │   ├── modal.config.ts
+│       │   │       │   └── search.config.ts
+│       │   │       └── user.vue
+│       │   └── test1
+│       │       └── test2
+│       │           └── test3
+│       │               └── test3.vue
+│       └── not-found
+│           └── index.vue
+├── test
+│   ├── components
+│   │   └── zizuj.vue
+│   ├── index.vue
+│   ├── service
+│   │   └── request.ts
+│   ├── test.html
+│   └── utils
+├── tsconfig.config.json
+├── tsconfig.json
+└── vite.config.ts
 `
 
 export default tree

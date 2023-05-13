@@ -4,7 +4,6 @@ const dependencies = {
       name: 'vue',
       description: '^3.2.45'
     },
-
     {
       name: 'vue-router',
       description: '^4.1.6'
@@ -21,16 +20,10 @@ const dependencies = {
       name: 'element-plus',
       description: '^2.2.32'
     },
-
     {
       name: '@element-plus/icons-vue',
       description: '^2.0.10'
     },
-    {
-      name: 'mockjs',
-      description: '^1.1.0'
-    },
-
     {
       name: 'less',
       description: '^4.1.3'
@@ -43,7 +36,6 @@ const dependencies = {
       name: 'countup.js',
       description: '^2.6.1'
     },
-
     {
       name: 'crypto-js',
       description: '^4.1.1'
@@ -51,6 +43,10 @@ const dependencies = {
     {
       name: 'dayjs',
       description: '^1.11.7'
+    },
+    {
+      name: 'mockjs',
+      description: '^1.1.0'
     },
     {
       name: 'normalize.css',

@@ -51,7 +51,7 @@ const techologyStack = [
 
   {
     title: 'CSS 预编译',
-    desp: 'Sass / Less'
+    desp: 'Less / Sass'
   },
 
   {
@@ -61,7 +61,7 @@ const techologyStack = [
 
   {
     title: 'Git Hook 工具',
-    desp: 'husky'
+    desp: 'Husky + lint-staged'
   },
 
   {
@@ -71,13 +71,13 @@ const techologyStack = [
 
   {
     title: '提交规范',
-    desp: 'Commitizen + Commitlint'
-  },
-
-  {
-    title: '自动部署',
-    desp: 'Centos + Jenkins + Nginx'
+    desp: 'Commitizen + Commitlint + cz-conventional-changelog + cz-customizable'
   }
+
+  // {
+  //   title: '自动部署',
+  //   desp: 'Centos + Jenkins + Nginx'
+  // }
 ]
 
 export default techologyStack

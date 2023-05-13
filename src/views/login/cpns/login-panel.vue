@@ -1,7 +1,7 @@
 <template>
   <div class="login-panel">
     <!-- 顶部标题 -->
-    <h1 class="title">CMS-CK</h1>
+    <h1 class="title">CK-CMS</h1>
 
     <!-- 中间tab切换框 -->
     <el-tabs v-model="tabsName" type="border-card" stretch class="tabs">

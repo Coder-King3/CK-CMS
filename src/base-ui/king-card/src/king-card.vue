@@ -1,7 +1,11 @@
 <template>
   <div class="king-card">
     <el-card class="box-card">
-      <template #header>{{ title }}</template>
+      <template #header>
+        <div class="card-header">
+          <h3>{{ title }}</h3>
+        </div>
+      </template>
       <slot></slot>
     </el-card>
   </div>
@@ -25,6 +29,17 @@ defineProps<IProps>()
       text-align: left !important;
       font-size: 14px;
       // font-weight: bold;
+    }
+    ::v-deep .el-card__body {
+      text-align: left !important;
+      // font-weight: bold;
+    }
+    .card-header {
+      h3 {
+        line-height: 20px;
+        padding: 0;
+        margin: 0;
+      }
     }
   }
 }
