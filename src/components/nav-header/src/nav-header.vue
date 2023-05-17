@@ -5,16 +5,16 @@
     </div>
     <div class="content">
       <king-header-crumb :breadcrumbs="breadcrumbs"></king-header-crumb>
-      <header-info />
+      <header-bar />
     </div>
   </div>
 </template>
 
 <script setup lang="ts" name="NavHeader">
 import { ref, computed } from 'vue'
-import KingHeaderCrumb from '@/base-ui/king-breadcurmb'
-import HeaderInfo from './cpns/header-info.vue'
 import { useRoute } from 'vue-router'
+import KingHeaderCrumb from '@/base-ui/king-breadcurmb'
+import HeaderBar from './cpns/header-bar.vue'
 import useLoginStore from '@/store/login/login'
 import { mapPathToBreadcrumb } from '@/utils/map-menus'
 

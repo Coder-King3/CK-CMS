@@ -5,7 +5,8 @@ const MainAPI = {
   EntireRoles: '/role/list',
   EntireDepts: '/department/list',
   EntireCategory: '/category/list',
-  EntireMenus: '/menu/tree'
+  EntireMenus: '/menu/tree',
+  EntireMenuList: '/menu/list'
 }
 
 // 获取所有角色
@@ -33,5 +34,13 @@ export const getEntireCategory = () => {
 export const getEntireMenus = () => {
   return CkRequest.get<IDataType>({
     url: MainAPI.EntireMenus
+  })
+}
+
+// 获取所有菜单
+export const getEntireMenuList = (queryParams?: any) => {
+  return CkRequest.get<IDataType>({
+    url: MainAPI.EntireMenuList,
+    params: queryParams
   })
 }

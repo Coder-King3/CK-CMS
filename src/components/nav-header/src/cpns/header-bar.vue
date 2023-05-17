@@ -1,18 +1,7 @@
 <template>
-  <div class="header-info">
+  <div class="header-bar">
     <!-- 操作图标 -->
-    <div class="operation">
-      <span>
-        <king-icon type="Message" />
-      </span>
-      <span>
-        <!-- <span class="dot"></span> -->
-        <king-icon type="ChatDotRound" />
-      </span>
-      <span>
-        <king-icon type="Search" />
-      </span>
-    </div>
+    <nav-operation></nav-operation>
 
     <!-- 个人信息 -->
     <div class="info">
@@ -46,11 +35,12 @@
   </div>
 </template>
 
-<script setup lang="ts" name="HeaderInfo">
-import { LOGIN_TOKEN } from '@/global/constants'
-import { localCache } from '@/utils/cache'
+<script setup lang="ts" name="HeaderBar">
 import { useRouter } from 'vue-router'
+import NavOperation from '@/components/nav-operation'
 import useLoginstore from '@/store/login/login'
+import { localCache } from '@/utils/cache'
+import { LOGIN_TOKEN } from '@/global/constants'
 
 // loginStore
 const loginStore = useLoginstore()
@@ -65,7 +55,7 @@ const handleExitClick = () => {
 </script>
 
 <style lang="less" scoped>
-.header-info {
+.header-bar {
   display: flex;
   align-items: center;
 }

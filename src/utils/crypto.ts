@@ -9,8 +9,8 @@ type WordArray = CryptoJS.lib.WordArray
  * @param {object} cryptoConfig
  */
 class Crypto {
-  cryptoConfig: object
-  secretKey: WordArray
+  private cryptoConfig: object
+  private readonly secretKey: WordArray
 
   constructor(secretKey: string, cryptoConfig: object) {
     this.secretKey = CryptoJS.MD5(CryptoJS.enc.Utf8.parse(secretKey))

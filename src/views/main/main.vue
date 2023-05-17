@@ -11,9 +11,9 @@
         <el-main class="page-content">
           <router-view v-slot="{ Component }">
             <transition name="fade-animate" mode="out-in">
-              <!-- <keep-alive :include="cachedViews"> -->
-              <component :key="key" :is="Component" />
-              <!-- </keep-alive> -->
+              <keep-alive>
+                <component :key="key" :is="Component" />
+              </keep-alive>
             </transition>
           </router-view>
         </el-main>

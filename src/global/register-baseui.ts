@@ -9,7 +9,7 @@ for (const key in files) {
   const module = files[key]
   components.push(module.default)
 }
-console.log('components', components)
+// console.log('components', components)
 
 // 注册组件
 export default function (app: App): void {
