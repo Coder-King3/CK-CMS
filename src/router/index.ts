@@ -1,20 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 import { localCache } from '@/utils/cache'
 import { LOGIN_TOKEN } from '@/global/constants'
 import { firstRoute, mapMenusToRoutes } from '@/utils/map-menus'
+import { PersonalCenter } from '@/components/nav-setting'
 
 const Login = () =>
   import(/* webpackChunkName: "login" */ '@/views/login/login.vue')
 const Main = () =>
   import(/* webpackChunkName: "main" */ '@/views/main/main.vue')
 const NotFound = () =>
-  // import(/* webpackChunkName: "notFound" */ '@/views/not-found/index.vue')
   import(/* webpackChunkName: "notFound" */ '@/base-ui/not-found/')
-
-// import Login from '@/views/login/login.vue'
-// import Main from '@/views/main/main.vue'
-// import NotFound from '@/views/not-found/index.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -36,6 +34,13 @@ const routes: RouteRecordRaw[] = [
     path: '/main',
     name: 'main',
     component: Main,
+    children: [
+      {
+        path: 'personal',
+        component: PersonalCenter,
+        meta: { breadcurmb: [{ name: '个人中心', path: '/main/personal' }] }
+      }
+    ],
     meta: {}
   },
   {
@@ -66,8 +71,12 @@ export function addRoutesWithMenu(userMenus: any[]) {
   }
 }
 
+NProgress.configure({ easing: 'ease', speed: 300, showSpinner: false })
+
 // 导航守卫
 router.beforeEach((to) => {
+  // 开启虚拟加载进度条
+  NProgress.start()
   // 只有登录成功(token), 才能真正进入到main页面
   const token = localCache.getCache(LOGIN_TOKEN)
   if (to.path === '/main' && !token) {
@@ -77,6 +86,11 @@ router.beforeEach((to) => {
   if (to.path === '/main' && firstRoute) {
     return firstRoute
   }
+})
+
+router.afterEach((to) => {
+  // 关闭虚拟加载进度条
+  NProgress.done()
 })
 
 export default router
