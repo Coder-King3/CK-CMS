@@ -30,7 +30,10 @@ const handleFoldClick = () => {
 // 面包屑列
 const route = useRoute()
 let { userMenus } = useLoginStore()
-let breadcrumbs = computed(() => mapPathToBreadcrumb(route.path, userMenus))
+let breadcrumbs = computed(() => {
+  let list = mapPathToBreadcrumb(route.path, userMenus)
+  return list.length > 0 ? list : (route.meta?.breadcurmb as any[])
+})
 </script>
 
 <style lang="less" scoped>

@@ -3,24 +3,24 @@
     <!-- 操作图标 -->
     <nav-operation></nav-operation>
 
-    <!-- 个人信息 -->
+    <!-- 个人中心 -->
     <div class="info">
       <el-dropdown>
         <span class="user-info">
           <el-avatar
             style="background: none"
             :size="36"
-            src="/public/favicon.png"
+            src="/public/King.jpg"
           />
           <span class="name">{{ loginStore.userInfo.name }}</span>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>
+            <el-dropdown-item @click="handleToUserClick">
               <king-icon type="InfoFilled"></king-icon>
-              <span>个人信息</span>
+              <span>个人中心</span>
             </el-dropdown-item>
-            <el-dropdown-item divided>
+            <el-dropdown-item @click="handleSettingClick" divided>
               <svg-icon type="palette" style="margin-right: 5px"></svg-icon>
               <span>主题设置</span>
             </el-dropdown-item>
@@ -32,25 +32,41 @@
         </template>
       </el-dropdown>
     </div>
+
+    <!-- 主题配置 -->
+    <theme-config ref="ThemeConfigRef"></theme-config>
   </div>
 </template>
 
 <script setup lang="ts" name="HeaderBar">
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import NavOperation from '@/components/nav-operation'
+import { ThemeConfig } from '@/components/nav-setting'
+
 import useLoginstore from '@/store/login/login'
 import { localCache } from '@/utils/cache'
 import { LOGIN_TOKEN } from '@/global/constants'
 
-// loginStore
+const router = useRouter()
 const loginStore = useLoginstore()
 
+// 跳转个人中心
+const handleToUserClick = () => {
+  router.push('/main/personal')
+}
+
 // 退出登录
-const router = useRouter()
 const handleExitClick = () => {
   // console.log('handleExitClick')
   localCache.deleteCache(LOGIN_TOKEN)
   router.push('/login')
+}
+
+// 主题设置
+const ThemeConfigRef = ref<InstanceType<typeof ThemeConfig>>()
+const handleSettingClick = () => {
+  ThemeConfigRef.value?.setDrawerVisible(true)
 }
 </script>
 

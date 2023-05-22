@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts" name="KingBreadCurmb">
+import { watch } from 'vue'
 import type { BreadCrumbsType } from '../types/types'
 import { ArrowRightBold } from '@element-plus/icons-vue'
 

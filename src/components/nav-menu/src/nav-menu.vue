@@ -104,8 +104,11 @@ const handleItemClick = (item: any) => {
 // 菜单默认值设置
 let route = useRoute()
 let activeMenu = computed(() => {
-  const pathMenu = mapPathToMenu(route.path, menus.value)
-  return pathMenu.id + ''
+  const pathMenu = mapPathToMenu(route.path, menus.value) ?? {
+    ...route,
+    id: undefined
+  }
+  return `${pathMenu.id}`
 })
 
 // 绑定样式
