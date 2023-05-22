@@ -13,10 +13,6 @@ const dependencies = {
       description: '^2.0.28'
     },
     {
-      name: 'axios',
-      description: '^1.3.3'
-    },
-    {
       name: 'element-plus',
       description: '^2.2.32'
     },
@@ -25,12 +21,12 @@ const dependencies = {
       description: '^2.0.10'
     },
     {
-      name: 'less',
-      description: '^4.1.3'
+      name: 'axios',
+      description: '^1.3.3'
     },
     {
-      name: 'echarts',
-      description: '^5.4.2'
+      name: '@types/nprogress',
+      description: '^0.2.0'
     },
     {
       name: 'countup.js',
@@ -45,12 +41,24 @@ const dependencies = {
       description: '^1.11.7'
     },
     {
+      name: 'echarts',
+      description: '^5.4.2'
+    },
+    {
+      name: 'less',
+      description: '^4.1.3'
+    },
+    {
       name: 'mockjs',
       description: '^1.1.0'
     },
     {
       name: 'normalize.css',
       description: '^8.0.1'
+    },
+    {
+      name: 'nprogress',
+      description: '^0.2.0'
     },
     {
       name: 'parallax-js',

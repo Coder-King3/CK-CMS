@@ -6,11 +6,11 @@ CK-CMS
 ├── components.d.ts
 ├── env.d.ts
 ├── index.html
-├── package
 ├── package-lock.json
 ├── package.json
 ├── pnpm-lock.yaml
 ├── public
+│   ├── King.jpg
 │   ├── favicon.ico
 │   └── favicon.png
 ├── src
@@ -26,10 +26,17 @@ CK-CMS
 │   │   │   ├── theme.less
 │   │   │   └── transition.less
 │   │   └── svg
+│   │       ├── dark-theme.svg
 │   │       ├── exit.svg
+│   │       ├── jump.svg
+│   │       ├── key-down.svg
+│   │       ├── key-enter.svg
+│   │       ├── key-esc.svg
+│   │       ├── key-up.svg
 │   │       ├── loading.svg
 │   │       ├── logo.svg
-│   │       └── palette.svg
+│   │       ├── palette.svg
+│   │       └── white-theme.svg
 │   ├── base-ui
 │   │   ├── king-breadcurmb
 │   │   │   ├── index.ts
@@ -85,7 +92,7 @@ CK-CMS
 │   │   │   ├── index.ts
 │   │   │   └── src
 │   │   │       ├── cpns
-│   │   │       │   └── header-info.vue
+│   │   │       │   └── header-bar.vue
 │   │   │       └── nav-header.vue
 │   │   ├── nav-menu
 │   │   │   ├── index.ts
@@ -93,6 +100,19 @@ CK-CMS
 │   │   │       ├── cpns
 │   │   │       │   └── sub-menu.vue
 │   │   │       └── nav-menu.vue
+│   │   ├── nav-operation
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       ├── cpns
+│   │   │       │   ├── contact.vue
+│   │   │       │   ├── message.vue
+│   │   │       │   └── search.vue
+│   │   │       └── nav-operation.vue
+│   │   ├── nav-setting
+│   │   │   ├── index.ts
+│   │   │   └── src
+│   │   │       ├── personal-center.vue
+│   │   │       └── theme-config.vue
 │   │   ├── page-content
 │   │   │   ├── index.ts
 │   │   │   └── src
@@ -181,14 +201,16 @@ CK-CMS
 │   │   ├── index.ts
 │   │   ├── login
 │   │   │   └── login.ts
-│   │   └── main
-│   │       ├── analysis
-│   │       │   ├── analysis.ts
-│   │       │   └── type.ts
-│   │       ├── main.ts
-│   │       └── system
-│   │           ├── system.ts
-│   │           └── type.ts
+│   │   ├── main
+│   │   │   ├── analysis
+│   │   │   │   ├── analysis.ts
+│   │   │   │   └── type.ts
+│   │   │   ├── main.ts
+│   │   │   └── system
+│   │   │       ├── system.ts
+│   │   │       └── type.ts
+│   │   └── setting
+│   │       └── setting.ts
 │   ├── types
 │   │   ├── components.ts
 │   │   ├── index.ts

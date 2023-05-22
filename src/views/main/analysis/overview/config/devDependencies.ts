@@ -5,12 +5,16 @@ const devDependencies = {
       description: '^4.0.0'
     },
     {
-      name: 'vue-tsc',
-      description: '^1.0.12'
-    },
-    {
       name: 'typescript',
       description: '~4.7.4'
+    },
+    {
+      name: 'prettier',
+      description: '^2.8.4'
+    },
+    {
+      name: 'vue-tsc',
+      description: '^1.0.12'
     },
     {
       name: '@commitlint/cli',
@@ -87,10 +91,6 @@ const devDependencies = {
     {
       name: 'npm-run-all',
       description: '^4.1.5'
-    },
-    {
-      name: 'prettier',
-      description: '^2.8.4'
     },
     {
       name: 'unplugin-auto-import',
