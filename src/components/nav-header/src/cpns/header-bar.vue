@@ -41,6 +41,7 @@
 <script setup lang="ts" name="HeaderBar">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { ElMessageBox } from 'element-plus'
 import NavOperation from '@/components/nav-operation'
 import { ThemeConfig } from '@/components/nav-setting'
 
@@ -58,9 +59,14 @@ const handleToUserClick = () => {
 
 // 退出登录
 const handleExitClick = () => {
-  // console.log('handleExitClick')
-  localCache.deleteCache(LOGIN_TOKEN)
-  router.push('/login')
+  ElMessageBox.confirm(`确定注销并退出系统吗？`, '提示', {
+    type: 'warning'
+  })
+    .then(() => {
+      localCache.deleteCache(LOGIN_TOKEN)
+      router.push('/login')
+    })
+    .catch(() => {})
 }
 
 // 主题设置

@@ -19,7 +19,7 @@
 let BASE_URL = ''
 if (import.meta.env.DEV) {
   // 开发环境
-  BASE_URL = 'http://localhost:36'
+  BASE_URL = 'http://localhost:3600'
   // BASE_URL = '/api'
 } else if (import.meta.env.PROD) {
   // 生产环境
