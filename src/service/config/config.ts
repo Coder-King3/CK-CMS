@@ -23,7 +23,7 @@ if (import.meta.env.DEV) {
   // BASE_URL = '/api'
 } else if (import.meta.env.PROD) {
   // 生产环境
-  BASE_URL = 'http://localhost:5000'
+  BASE_URL = 'http://localhost:3600'
 }
 
 console.log('BASE_URL', BASE_URL)
