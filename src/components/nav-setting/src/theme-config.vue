@@ -1,6 +1,6 @@
 <template>
   <div class="theme-config">
-    <el-drawer v-model="drawerVisible" class="theme-config_drawer">
+    <el-drawer v-model="drawerVisible" class="theme-config_drawer" size="20%">
       <template #header>
         <h3 class="drawer-title">主题配置</h3>
       </template>

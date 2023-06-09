@@ -7,11 +7,7 @@
     <div class="info">
       <el-dropdown>
         <span class="user-info">
-          <el-avatar
-            style="background: none"
-            :size="36"
-            src="/public/King.jpg"
-          />
+          <el-avatar style="background: none" :size="36" src="/King.jpg" />
           <span class="name">{{ loginStore.userInfo.name }}</span>
         </span>
         <template #dropdown>
