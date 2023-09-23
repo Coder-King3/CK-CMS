@@ -20,10 +20,10 @@ let BASE_URL = ''
 if (import.meta.env.DEV) {
   // 开发环境
   BASE_URL = 'http://localhost:3600'
-  // BASE_URL = '/api'
+  // BASE_URL = 'https://king-cms.onrender.com/'
 } else if (import.meta.env.PROD) {
   // 生产环境
-  BASE_URL = 'http://localhost:3600'
+  BASE_URL = 'https://king-cms.onrender.com/'
 }
 
 console.log('BASE_URL', BASE_URL)

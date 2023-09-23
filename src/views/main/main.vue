@@ -38,7 +38,6 @@ const key = computed(() => {
 </script>
 
 <style scoped lang="less">
-@yanse: #fff;
 
 .main {
   position: fixed;

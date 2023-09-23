@@ -1,6 +1,6 @@
 enum CacheType {
   Local,
-  Session
+  Session,
 }
 
 /**
@@ -9,10 +9,10 @@ enum CacheType {
  * @param {Storage} cache
  */
 class Cache {
-  private cache: Storage
+  private cache: Storage;
 
   constructor(type: CacheType) {
-    this.cache = type === CacheType.Local ? localStorage : sessionStorage
+    this.cache = type === CacheType.Local ? localStorage : sessionStorage;
   }
 
   /**
@@ -23,8 +23,8 @@ class Cache {
    * @memberof Cache
    */
   getCache(key: string) {
-    const value = this.cache.getItem(key)
-    if (value) return JSON.parse(value)
+    const value = this.cache.getItem(key);
+    if (value) return JSON.parse(value);
   }
 
   /**
@@ -35,7 +35,7 @@ class Cache {
    * @memberof Cache
    */
   setCache(key: string, value: any) {
-    if (value) this.cache.setItem(key, JSON.stringify(value))
+    if (value) this.cache.setItem(key, JSON.stringify(value));
   }
 
   /**
@@ -45,7 +45,7 @@ class Cache {
    * @memberof Cache
    */
   deleteCache(key: string) {
-    this.cache.removeItem(key)
+    this.cache.removeItem(key);
   }
 
   /**
@@ -54,9 +54,9 @@ class Cache {
    * @memberof Cache
    */
   clearCache() {
-    this.cache.clear()
+    this.cache.clear();
   }
 }
 
-export const localCache = new Cache(CacheType.Local)
-export const sessionCache = new Cache(CacheType.Session)
+export const localCache = new Cache(CacheType.Local);
+export const sessionCache = new Cache(CacheType.Session);
