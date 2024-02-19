@@ -23,7 +23,7 @@ if (import.meta.env.DEV) {
   // BASE_URL = 'https://king-cms.onrender.com/'
 } else if (import.meta.env.PROD) {
   // 生产环境
-  BASE_URL = 'https://king-cms.onrender.com/'
+  BASE_URL = 'https://cms-server-3mw0.onrender.com/'
 }
 
 console.log('BASE_URL', BASE_URL)
