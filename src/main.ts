@@ -9,9 +9,7 @@ import globalRegister from './global'
 import 'virtual:svg-icons-register'
 
 const app = createApp(App)
-
 // app.use(mock)
-
 app.use(store)
 app.use(router)
 app.use(globalRegister)

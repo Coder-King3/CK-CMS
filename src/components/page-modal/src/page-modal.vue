@@ -175,7 +175,7 @@ const handleConfirmClick = () => {
     // 4.3判断提交类型并发送请求
     if (modalTypeRef.value === modalType.add) {
       let submitFrom = { ...modalFrom, ...props.modalConfig.otherInfo }
-      console.log('submitFrom', { ...submitFrom })
+      // console.log('submitFrom', { ...submitFrom })
       systemStore
         .addPageDataAction(props.modalConfig.pageParam, submitFrom, resetFrom)
         .then(({ statu }) => {

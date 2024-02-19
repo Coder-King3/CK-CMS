@@ -110,7 +110,7 @@ const checkInfo = reactive({
   content: ''
 })
 const handleCheckClick = (row: any) => {
-  console.log('row', row)
+  // console.log('row', row)
   checkInfo.title = row.title
   checkInfo.content = row.content
   checkVisible.value = true

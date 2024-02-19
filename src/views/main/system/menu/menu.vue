@@ -121,7 +121,7 @@ const resetDataClick = () => {
 }
 // 2.4编辑按钮回调函数
 const editCallback = (data: any) => {
-  console.log('data', { ...data })
+  // console.log('data', { ...data })
   otherInfo.type = data.type
   otherInfo.sort = data.sort
   otherInfo.icon = data.icon

@@ -13,8 +13,8 @@ const props = defineProps({
 })
 
 const testBtn = () => {
-  console.log('props.param', props.param)
-  console.log('props.param.num', props.param.num)
+  // console.log('props.param', props.param)
+  // console.log('props.param.num', props.param.num)
 }
 </script>
 
